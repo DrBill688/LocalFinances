@@ -1,0 +1,30 @@
+
+<html>
+<head>
+    {% block head %}
+    <title>Local Financial Tracker</title>
+    <link rel="stylesheet" type="text/css" href="LocalFinance.css">
+    <script type="text/javascript" src="PageHandler.js"></script>
+    <script type="text/javascript" src="utils.js"></script>
+    {% endblock %}
+    <script>
+    function onPageInit() {
+        let app = new PageHandler();
+        {% block content %}{% endblock %}
+        app.initialize();
+    }
+    </script>
+</head>
+<body onload="onPageInit()">
+    <div class='header'></div>
+    <div class='contentwrapper'>
+        <div class='leftmenu'>
+            <div><a href='index.html'>Dashboard Ex</a></div>
+            <div><a href='edit.html'>Update Data</a></div>
+            <div><a href='ATT.html'>ATT</a></div>
+        </div>
+        <div id='contentmain' class='content'></div>
+    </div>
+    <div class='footer'>&copy; Copyright 2024 by Dr. William N. Roney.</div>
+</body>
+</html>
